@@ -5,29 +5,9 @@ import App from './App';
 import * as serviceWorker from './serviceWorker';
 import { Provider } from 'react-redux'
 import { createStore } from 'redux'
+import reducer from './reducers'
 
-const initialState = {
-    tracks: [
-        "aq",
-        "bq"
-    ],
-    playlist: [
-        "s",
-        "x"
-    ]
-}
-
-function playlist(state = initialState, action) {
-    if (action.type === "ADD_TRACK") {
-        return {
-          ...state,
-          tracks: [...state.tracks,action.playload]  
-        };
-    }
-    return state
-}
-
-const store = createStore(playlist);
+const store = createStore(reducer);
 
 ReactDOM.render(
     <Provider store={store}>

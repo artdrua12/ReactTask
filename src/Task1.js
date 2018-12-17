@@ -26,7 +26,7 @@ class Task1 extends Component {
         this.setState({ text: event.target.value })
     }
     delete(index){
-        console.log(index);
+        this.props.onDeleteTrack(index);
     }
 
     render() {
@@ -40,13 +40,8 @@ class Task1 extends Component {
                 ></input>
                 <button onClick = {this.addTrack} className="submitBtn">Add text</button>
                 <ul>
-                    {this.state.list.map((item,index)=>
-                    <li key ={index}>{item}<button onClick = {()=>this.delete(index)}>delete text</button> </li>
-                    )}
-                </ul>
-                <ul>
           {this.props.tracks.map((track, index)=>
-          <li key={index}>{track}</li>
+          <li key ={index}>{track}<button onClick = {()=>this.delete(index)}>delete text</button> </li>
             )}         
         </ul>
             </div>
@@ -61,6 +56,9 @@ export default connect(
     dispatch => ({
         onAddTrack: (trackName) => {
           dispatch({ type: 'ADD_TRACK', playload: trackName })
+        },
+        onDeleteTrack:(index ) => {
+            dispatch({ type: 'DELETE_TRACK', playload: index })
         }
       })
   )(Task1); 
