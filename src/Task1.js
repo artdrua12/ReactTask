@@ -1,5 +1,4 @@
 import React, { Component } from 'react'
-import './Task1.css';
 import {connect} from "react-redux";
 
 class Task1 extends Component {
@@ -39,9 +38,10 @@ class Task1 extends Component {
                     ref = {(input)=>{this.trackInput = input}}
                 ></input>
                 <button onClick = {this.addTrack} className="submitBtn">Add text</button>
+                <h1>List:</h1>
                 <ul>
           {this.props.tracks.map((track, index)=>
-          <li key ={index}>{track}<button onClick = {()=>this.delete(index)}>delete text</button> </li>
+          <li key ={index}>{track}<button onClick = {()=>this.delete(index)} className="btn">delete text</button> </li>
             )}         
         </ul>
             </div>
