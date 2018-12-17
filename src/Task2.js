@@ -52,14 +52,11 @@ class Task1 extends Component {
 
 export default connect(
     state => ({
-        tracks: state.redusertsk1
+        tracks: state.redusertsk2
     }),
     dispatch => ({
         onAddTrack: (trackName) => {
             dispatch({ type: 'ADD_TRACK', playload: trackName })
-        },
-        onDeleteTrack: (index) => {
-            dispatch({ type: 'DELETE_TRACK', playload: index })
         }
     })
 )(Task1); 
