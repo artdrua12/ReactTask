@@ -77,8 +77,12 @@ div.left, div.right{
   align-self: flex-end;
 }
 input{
-  font-size: 1.3rem;
+  font-size: 1.2rem;
 }
 a {
-  margin-bottom: 10px
+  position: relative;
+  color: rgb(240, 72, 66);
+  bottom: 20px;
+  margin: auto;
+  margin-right: 20px;
 }
