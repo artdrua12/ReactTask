@@ -1,8 +1,7 @@
 
 const initialState = [
-    "a",
-    "b",
-    "c"
+    "text 1",
+    "text 2"
 ]
 
 export default function playlist(state = initialState, action) {
