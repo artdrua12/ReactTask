@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import logo from './logo_w.png';
 import './App.css';
-
 import Task1 from './Task1'
 
 
@@ -20,4 +19,4 @@ class App extends Component {
   }
 }
 
-export default App
+export default App; 
