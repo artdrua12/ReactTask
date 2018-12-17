@@ -1,5 +1,5 @@
 .app {
-  width: 700px;
+  width: 670px;
   margin: auto;
   display: grid;
   grid-template-columns: 1fr;
@@ -20,6 +20,7 @@
 .task1header {
   grid-column: 1 / 2;
   grid-row: 2 / 3;
+  font-size: 1.5rem;
 }
 
 .task1content {
@@ -30,6 +31,7 @@
 .task2header {
   grid-column: 1 / 2;
   grid-row: 4 / 5;
+  font-size: 1.5rem;
 }
 
 .task2content {
