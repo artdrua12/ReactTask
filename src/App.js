@@ -11,7 +11,7 @@ class App extends Component {
       <div className="app">
         <div className="logo">
           <img src={logo} alt="This must be img" />
-          <a href="//index.html" >Home link  </a>
+          <a href="#" target="_self" >Home link  </a>
           <a href="https://pixelplex.io" target="_blank">Pixel link </a>
         </div>
         <div className="task1header border">Task#1</div>
