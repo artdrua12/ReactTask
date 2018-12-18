@@ -38,6 +38,8 @@ class Task2 extends Component {
                         max={5000}
                         step={100}
                     />
+                    <p>0</p>
+                    <p>5000</p>
                 </div>
                 <div className="right">
                     <h3>Counter:</h3>

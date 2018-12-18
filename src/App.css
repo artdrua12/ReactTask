@@ -72,7 +72,9 @@ div.left, div.right{
   padding: 10px 30px 7px 10px;
 }
 div.tsk2 {
-  justify-content: center;
+  flex-wrap: wrap;
+  flex-direction: row;
+  align-items: center
 }
 
 .submitBtn{
@@ -91,4 +93,10 @@ a {
   bottom: 20px;
   margin: auto;
   margin-right: 20px;
+}
+p{
+  margin-top: -20px
+}
+p:last-child{
+  margin-left: 230px;
 }
