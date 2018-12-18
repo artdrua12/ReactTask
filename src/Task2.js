@@ -1,50 +1,39 @@
 import React, { Component } from 'react'
 import { connect } from "react-redux";
+import Typography from '@material-ui/core/Typography';
+import Slider from '@material-ui/lab/Slider';
 
-class Task1 extends Component {
+class Task2 extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            text: ""
+            value: 2500
         }
-        this.addTrack = this.addTrack.bind(this);
-        this.handleonChange = this.handleonChange.bind(this);
-        this.delete = this.delete.bind(this);
+        this.handleChange = this.handleChange.bind(this);
     }
 
-    addTrack() {
-        console.log(this.trackInput.value);
-        this.props.onAddTrack(this.trackInput.value);
-        this.trackInput.value = "";
-    }
-    handleonChange(event) {
-        this.setState({ text: event.target.value })
-    }
-    delete(index) {
-        this.props.onDeleteTrack(index);
-    }
-
+    handleChange = (event, value) => {
+        // this.setState({ value });
+        this.props.onAddValue(value)
+    };
     render() {
         return (
             <div className="flex">
-                <div className="left">
-                    <input
-                        type="text"
-                        placeholder="Enter text"
-                        onChange={this.handleonChange}
-                        ref={(input) => { this.trackInput = input }}
-                    ></input>
-                    <button onClick={this.addTrack} className="submitBtn">Add text</button>
+                <div className="left tsk2">
+                    <Typography id="label">{this.props.obj.curentValue}</Typography>
+                    <Slider
+
+                        value={this.props.obj.curentValue}
+                        aria-labelledby="label"
+                        onChange={this.handleChange}
+                        min={0}
+                        max={5000}
+                        step={100}
+                    />
                 </div>
                 <div className="right">
-                    <h3>List:</h3>
-                    <ul>
-                        {this.props.tracks.map((track, index) =>
-                            <li key={index}>{track}<button onClick={() => this.delete(index)} className="btn">delete text</button> </li>
-                        )}
-                    </ul>
+                    <h3>Counter:</h3>
                 </div>
-
             </div>
         )
     }
@@ -52,11 +41,11 @@ class Task1 extends Component {
 
 export default connect(
     state => ({
-        tracks: state.redusertsk2
+        obj: state.redusertsk2
     }),
     dispatch => ({
-        onAddTrack: (trackName) => {
-            dispatch({ type: 'ADD_TRACK', playload: trackName })
+        onAddValue: (value) => {
+            dispatch({ type: 'ADD_VALUE', playload: value })
         }
     })
-)(Task1); 
+)(Task2); 

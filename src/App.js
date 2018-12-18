@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import logo from './logo_w.png';
 import './App.css';
 import Task1 from './Task1'
+import Task2 from './Task2'
 
 
 class App extends Component {
@@ -17,7 +18,9 @@ class App extends Component {
         <div className="border task1content">
           <Task1 ></Task1></div>
         <div className="task2header border">Task#2</div>
-        <div className="task2content border">sss</div>
+        <div className="task2content border">
+          <Task2></Task2>
+        </div>
       </div>
     )
   }
