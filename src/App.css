@@ -53,6 +53,7 @@ li {
   border: 1px solid black; 
   padding: 3px 2px 3px 4px;
   overflow: hidden;
+  margin-left: -40px;
 }
 
 .btn {
