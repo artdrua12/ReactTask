@@ -7,22 +7,30 @@ class Task2 extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            value: 2500
+            startValue: 0
         }
         this.handleChange = this.handleChange.bind(this);
+        this.timer = this.timer.bind(this);
+
+    }
+
+    componentWillMount(){
+        setInterval(this.timer,1000);
     }
 
     handleChange = (event, value) => {
-        // this.setState({ value });
         this.props.onAddValue(value)
     };
+    timer(){    
+        let temp = this.state.startValue+this.props.obj.curentValue
+        this.setState({ startValue: temp})
+    }
     render() {
         return (
             <div className="flex">
                 <div className="left tsk2">
                     <Typography id="label">{this.props.obj.curentValue}</Typography>
                     <Slider
-
                         value={this.props.obj.curentValue}
                         aria-labelledby="label"
                         onChange={this.handleChange}
@@ -33,6 +41,7 @@ class Task2 extends Component {
                 </div>
                 <div className="right">
                     <h3>Counter:</h3>
+                    <h3>{this.state.startValue}</h3>
                 </div>
             </div>
         )

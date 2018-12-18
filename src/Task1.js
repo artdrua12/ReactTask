@@ -13,7 +13,6 @@ class Task1 extends Component {
     }
 
     addTrack() {
-        console.log(this.trackInput.value);
         this.props.onAddTrack(this.trackInput.value);
         this.trackInput.value = "";
     }
